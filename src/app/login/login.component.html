@@ -11,7 +11,7 @@
                             <h1>Login</h1>
                         </div>
                     </div>
-                    <form action="" method="GET" name="login" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                    <form action="" method="POST" name="login" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                         <div class="form-group">
                             <label >Username</label>
                             <input type="email" name="username" [(ngModel)]="form.username" #username="ngModel"  class="form-control" aria-describedby="emailHelp" placeholder="Enter Username" required>

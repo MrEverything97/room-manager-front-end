@@ -7,15 +7,15 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class UserService {
-  private readonly API_URL_REGISTER = 'http://localhost:8080/api/register';
-  private readonly API_URL_UPDATE_PASSWORD = 'http://localhost:8080/api/changePassword';
-  constructor(private httpClient: HttpClient) { }
-  createUser(user: User): Observable<User> {
-    return this.httpClient.post<User>(this.API_URL_REGISTER, user);
-  }
 
+  private readonly API_URL_UPDATE_PASSWORD = 'http://localhost:8080/api/changePassword';
+  private readonly API_URL_GET_USER_BY_NAME = 'http://localhost:8080/user' ;
+  constructor(private httpClient: HttpClient) { }
   updatePassword(oldPassword: string, newPassword: string): Observable<User> {
     return this.httpClient.put<User>(`${this.API_URL_UPDATE_PASSWORD}?oldPassword=${oldPassword}&newPassword=${newPassword}`, null);
+  }
+  getUserByUserName(name: string): Observable<User> {
+    return this.httpClient.get<User>(`${this.API_URL_GET_USER_BY_NAME}/${name}`);
   }
 }
 

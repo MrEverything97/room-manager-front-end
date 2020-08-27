@@ -9,8 +9,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserModule} from 'src/app/user/user.module';
 import { JwtModule } from '@auth0/angular-jwt';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent,
+  },
   {
     path: 'login',
     component: LoginComponent,
@@ -24,7 +29,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

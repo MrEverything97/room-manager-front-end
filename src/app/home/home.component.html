@@ -1,0 +1,7 @@
+<div *ngIf ="isLogin;else loginForm">
+    <p>Hi, {{info.username}}</p>
+    <a routerLink="../" class="fa fa-sign-out" *ngIf="isLogin" (click) = "logout()" >&nbsp;Log out</a>
+</div>
+<ng-template #loginForm>
+    <a routerLink="../login">Login</a>
+</ng-template>
